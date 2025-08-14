@@ -1,6 +1,6 @@
 import ZKLib from 'node-zklib';
 import fetch from 'node-fetch';
-import { getBranches } from "./branches";
+import { getBranches } from "./branches.js";
 
 // Store last fetch time for each device to avoid reprocessing all logs
 const lastFetchTimes = {};
