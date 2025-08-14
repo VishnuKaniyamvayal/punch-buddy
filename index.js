@@ -1,12 +1,12 @@
-const ZKLib = require('node-zklib');
-const fetch = require('node-fetch');
+import ZKLib from 'node-zklib';
+import fetch from 'node-fetch';
+import { getBranches } from "./branches";
 
 // Store last fetch time for each device to avoid reprocessing all logs
 const lastFetchTimes = {};
 
 const fetchAllBranchesPunches = async () => {
     const branches = await getBranches();
-
     for (const branch of branches) {
         try {
             await fetchBranchPunches(branch);
